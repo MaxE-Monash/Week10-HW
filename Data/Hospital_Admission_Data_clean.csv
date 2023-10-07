@@ -1,0 +1,73 @@
+﻿State,Year,Type,Admission
+New South Wales,2019,Public,"1,809,760"
+New South Wales,2019,Private,"1,253,139"
+New South Wales,2019,All,"3,062,899"
+New South Wales,2020,Public,"1,898,959"
+New South Wales,2020,Private,"1,453,573"
+New South Wales,2020,All,"3,352,532"
+New South Wales,2021,Public,"1,768,912"
+New South Wales,2021,Private,"1,359,031"
+New South Wales,2021,All,"3,127,943"
+Victoria,2019,Public,"1,834,131"
+Victoria,2019,Private,"1,025,256"
+Victoria,2019,All,"2,859,387"
+Victoria,2020,Public,"1,822,038"
+Victoria,2020,Private,"1,075,759"
+Victoria,2020,All,"2,897,797"
+Victoria,2021,Public,"1,814,006"
+Victoria,2021,Private,"1,083,287"
+Victoria,2021,All,"2,897,293"
+Queensland,2019,Public,"1,596,532"
+Queensland,2019,Private,"1,128,472"
+Queensland,2019,All,"2,725,004"
+Queensland,2020,Public,"1,685,357"
+Queensland,2020,Private,"1,245,123"
+Queensland,2020,All,"2,930,480"
+Queensland,2021,Public,"1,720,372"
+Queensland,2021,Private,"1,225,399"
+Queensland,2021,All,"2,945,771"
+Western Australia,2019,Public,"612,154"
+Western Australia,2019,Private,"504,158"
+Western Australia,2019,All,"1,116,312"
+Western Australia,2020,Public,"644,476"
+Western Australia,2020,Private,"559,132"
+Western Australia,2020,All,"1,203,608"
+Western Australia,2021,Public,"616,935"
+Western Australia,2021,Private,"549,530"
+Western Australia,2021,All,"1,166,465"
+South Australia,2019,Public,"446,766"
+South Australia,2019,Private,"336,941"
+South Australia,2019,All,"783,707"
+South Australia,2020,Public,"466,248"
+South Australia,2020,Private,"346,048"
+South Australia,2020,All,"812,296"
+South Australia,2021,Public,"466,236"
+South Australia,2021,Private,"350,699"
+South Australia,2021,All,"816,935"
+Tasmania,2019,Public,"130,473"
+Tasmania,2019,Private,
+Tasmania,2019,All,
+Tasmania,2020,Public,"140,192"
+Tasmania,2020,Private,
+Tasmania,2020,All,
+Tasmania,2021,Public,"157,344"
+Tasmania,2021,Private,
+Tasmania,2021,All,
+Australian Capital Territory,2019,Public,"118,737"
+Australian Capital Territory,2019,Private,
+Australian Capital Territory,2019,All,
+Australian Capital Territory,2020,Public,"129,547"
+Australian Capital Territory,2020,Private,
+Australian Capital Territory,2020,All,
+Australian Capital Territory,2021,Public,"121,079"
+Australian Capital Territory,2021,Private,
+Australian Capital Territory,2021,All,
+Northern Territory,2019,Public,"181,489"
+Northern Territory,2019,Private,
+Northern Territory,2019,All,
+Northern Territory,2020,Public,"182,370"
+Northern Territory,2020,Private,
+Northern Territory,2020,All,
+Northern Territory,2021,Public,"172,211"
+Northern Territory,2021,Private,
+Northern Territory,2021,All,
