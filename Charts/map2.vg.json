@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 500,
+  "title": "Locations of Private and Public Hospitals across Australia",
+  "projection": {
+    "type": "equirectangular"
+  },
+"params": [{
+  "name": "Type_Slider",
+  "value": "Public", 
+  "bind": {
+    "input": "select" , 
+    "options" : ["null", "Private", "Public"],
+    "labels" : ["Show All", "Private", "Public"],
+    "name": "Sector of Hospital"
+  }
+
+}],
+
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/MaxE-Monash/Assignment-2/main/Maps/STE_2016_AUST_Min.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "STE_2016_AUST"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/MaxE-Monash/Assignment-2/main/Data/Aus_hospitals.csv"
+      },
+      "transform": [ 
+      {
+        "filter":"Type_Slider == 'null' || datum.Sector == Type_Slider" 
+      }],
+      "encoding": {
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [{
+        "mark": {
+          "type": "circle",
+          "color": "orange",
+          "size": 15
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "fontSize": 14.5 ,
+          "limit": 148,
+          "dy": -10
+        },
+        "encoding": {
+          "text": {"field": "Name",  "type": "nominal"},
+          "color":{"value": "black"} , 
+          "opacity": {"condition":{"test":"datum['code'] == 'H0358' || datum['Code'] == 'H0372' ||  datum['Code'] == 'H5210' ||datum['Code']  == 'H0621' || datum['Code']  == 'H0714' ||datum['Code']  ==  'H0540' || datum['Code']  ==  'H0409' || datum['Code']  ==  'H0738'         "
+          , 
+          "value": 1 }, "value":0},
+          "tooltip" :[
+            {"field": "Name" , "type": "nominal"},
+            {"field": "Sector", "type": "nominal"},
+            {"field": "Open/Closed", "type":  "nominal"},
+            {"field": "State", "type": "nominal"}
+
+          ]
+
+        } 
+      }]
+    }
+  ]
+}

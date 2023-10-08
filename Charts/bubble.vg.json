@@ -1,0 +1,77 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 500,
+    "width": 800,
+    "title": "State Expenditure on Health across Australia",
+    "data": {
+      "url": "https://raw.githubusercontent.com/MaxE-Monash/Assignment-2/main/Data/Bubble_plot_data.csv"
+    },
+    "params": [
+      {
+        "name": "state_selection",
+        "select": {"type": "point", "fields": ["State"]},
+        "bind": "legend"
+      }
+    ],
+    "transform": [
+      {
+        "calculate": "datum.Expenditure * 1000000/datum.Population",
+        "as": "Expenditure per Capita"
+      }
+    ],
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+      "y": {
+        "field": "Expenditure per Capita",
+        "type": "quantitative",
+        "axis": {"tickCount": 20},
+        "scale": {"type": "log", "domain": [5500, 20000]}
+      },
+      "size": {
+        "field": "Population",
+        "type": "quantitative",
+        "scale": {"range": [10, 100]}
+      },
+      "fill": {
+        "field": "State",
+        "type": "nominal",
+        "scale": {
+          "domain": ["NSW", "VIC", "ACT", "WA", "SA", "NT"],
+          "range": [
+            "#e41a1c",
+            "#984ea3",
+            "#ff7f00",
+            "#a6cee3",
+            "#377eb8",
+            "#a65628"
+          ]
+        }
+      },
+      "color": {
+        "field": "State",
+        "type": "nominal",
+        "scale": {
+          "domain": ["NSW", "VIC", "ACT", "WA", "SA", "NT"],
+          "range": [
+            "#e41a1c",
+            "#984ea3",
+            "#ff7f00",
+            "#a6cee3",
+            "#377eb8",
+            "#a65628"
+          ]
+        }
+      },
+      "opacity": {
+        "condition": {"param": "state_selection", "value": 0.8},
+        "value": 0.2
+      },
+      "tooltip": [
+        {"field": "State", "type": "nominal"},
+        {"field": "Expenditure per Capita", "type": "quantitative", "format": ".2f"},
+        {"field": "Expenditure", "type": "quantitative", "format": ".2f" , "title": "Overall Expenditure (Millions)"}
+      ]
+    },
+    "config": {}
+  }
