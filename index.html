@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
     
     <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 
 </head>
@@ -16,11 +17,41 @@
 
     <script type="text/javascript">
 
-        var spec2 = "charts/map1.vg.json";
+        var spec2 = "map1.vg.json";
         vegaEmbed('#map1',spec2).then(function(result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
       </script>
     
+</body>
+
+<body>
+<p>
+  "This one has a filter, alongside tooltips and text annotations for important/best reviewed hospitals
+  from google"
+</p>
+<div id="map2"></div>
+<script type="text/javascript">
+
+        var spec1 = "map2.vg.json";
+        vegaEmbed('#map2',spec1).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      </script>
+
+
+
+<p>
+This here is a graph with legend interactivity 
+
+</p>
+      <div id="bubble"></div>
+      <script type="text/javascript">
+              var spec = "bubble.vg.json";
+              vegaEmbed('#bubble',spec).then(function(result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+              }).catch(console.error);
+            </script>
+
 </body>
 </html>
